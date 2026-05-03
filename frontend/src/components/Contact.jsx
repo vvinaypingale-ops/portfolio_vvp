@@ -18,8 +18,8 @@ const Contact = () => {
     setStatus({ type: 'loading', message: 'Sending message...' });
     
     try {
-      // Connect to the actual backend running on port 5000
-      await axios.post('http://localhost:5000/api/contact', formData);
+      // Connect to the actual backend running via serverless
+      await axios.post('/api/contact', formData);
       
       setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
       setFormData({ name: '', email: USER_DETAILS.email, message: '' });
