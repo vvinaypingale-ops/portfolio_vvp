@@ -8,12 +8,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#3b82f6",
-        darkBg: "#0f172a",
-        darkCard: "#1e293b",
+        primary: "#06b6d4", // Cyan 500
+        secondary: "#8b5cf6", // Violet 500
+        darkBg: "#030712", // Gray 950 (Very dark)
+        darkCard: "#111827", // Gray 900
+        darkCardHover: "#1f2937", // Gray 800
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+      },
+      animation: {
+        'gradient-x': 'gradient-x 15s ease infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          },
+        }
       }
     },
   },

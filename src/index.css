@@ -1,42 +1,58 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @theme {
-  --color-primary: #3b82f6;
-  --color-darkBg: #0f172a;
-  --color-darkCard: #1e293b;
+  --color-primary: #06b6d4;
+  --color-secondary: #8b5cf6;
+  --color-darkBg: #030712;
+  --color-darkCard: #111827;
   --font-sans: "Inter", sans-serif;
-  
-  --animate-blob: blob 7s infinite;
 }
 
 @layer base {
   body {
     @apply font-sans bg-gray-50 text-gray-900 transition-colors duration-300;
     overflow-x: hidden;
+    cursor: none; /* Hide default cursor to use custom AnimatedCursor */
   }
   
   .dark body {
-    @apply bg-[#0f172a] text-gray-100;
+    @apply bg-[#030712] text-gray-100;
+  }
+  
+  /* Show default cursor on touch devices */
+  @media (pointer: coarse) {
+    body {
+      cursor: auto;
+    }
   }
 }
 
-.glass {
-  @apply bg-white/70 dark:bg-[#1e293b]/70 backdrop-blur-md border border-white/20 dark:border-gray-700/50 shadow-lg;
+.ai-glass {
+  @apply bg-white/70 dark:bg-[#111827]/70 backdrop-blur-md border border-white/20 dark:border-gray-700/50 shadow-xl;
+}
+
+.ai-glass-card {
+  @apply bg-white/40 dark:bg-[#1f2937]/40 backdrop-blur-md border border-gray-200 dark:border-gray-700 hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-primary/20;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom Animations */
-@keyframes blob {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0px, 0px) scale(1); }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-[#030712];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-800 rounded-full hover:bg-primary dark:hover:bg-primary transition-colors;
 }

@@ -40,10 +40,12 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="glass rounded-3xl p-8 md:p-12 shadow-2xl"
+          className="ai-glass rounded-3xl p-8 md:p-12"
         >
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
+            <h2 className="text-4xl font-bold mb-4">
+              Get In <span className="text-gradient">Touch</span>
+            </h2>
             <p className="text-gray-600 dark:text-gray-400">
               Have a project in mind or just want to say hi? I'm always open to new opportunities.
             </p>
@@ -97,7 +99,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="John Doe"
-                  className="w-full px-5 py-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-darkBg/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 dark:placeholder-gray-500"
+                  className="w-full px-5 py-4 rounded-xl border border-gray-300 dark:border-gray-700 bg-white/50 dark:bg-[#030712]/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 dark:placeholder-gray-500"
                 />
               </div>
               <div>
@@ -109,7 +111,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-darkBg/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  className="w-full px-5 py-4 rounded-xl border border-gray-300 dark:border-gray-700 bg-white/50 dark:bg-[#030712]/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
                 />
               </div>
             </div>
@@ -123,13 +125,13 @@ const Contact = () => {
                 required
                 rows="5"
                 placeholder="How can I help you today?"
-                className="w-full px-5 py-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-darkBg/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none placeholder-gray-400 dark:placeholder-gray-500"
+                className="w-full px-5 py-4 rounded-xl border border-gray-300 dark:border-gray-700 bg-white/50 dark:bg-[#030712]/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none placeholder-gray-400 dark:placeholder-gray-500"
               ></textarea>
             </div>
             <button
               type="submit"
               disabled={status.type === 'loading'}
-              className="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition-all hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 rounded-xl font-bold text-lg transition-all hover:scale-[1.02] shadow-[0_0_15px_rgba(6,182,212,0.3)] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
             >
               {status.type === 'loading' ? 'Sending Message...' : 'Send Message'}
             </button>

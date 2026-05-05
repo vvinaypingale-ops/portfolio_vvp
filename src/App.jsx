@@ -5,6 +5,8 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import AnimatedCursor from './components/AnimatedCursor';
+import NeuralNetworkBg from './components/NeuralNetworkBg';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { FiArrowUp } from 'react-icons/fi';
 
@@ -45,18 +47,17 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-gray-50 dark:bg-darkBg transition-colors duration-500">
+      <AnimatedCursor />
+      
       {/* Scroll Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-primary transform origin-left z-[100]"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary transform origin-left z-[100]"
         style={{ scaleX }}
       />
 
-      {/* Animated Background blob */}
-      <div className="fixed inset-0 pointer-events-none z-[-1]">
-        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary/20 dark:bg-primary/10 rounded-full blur-[100px] animate-blob"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-purple-500/20 dark:bg-purple-500/10 rounded-full blur-[100px] animate-blob animation-delay-2000"></div>
-      </div>
+      {/* AI Neural Network Background */}
+      <NeuralNetworkBg />
 
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       
