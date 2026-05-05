@@ -20,7 +20,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <a href="#home" className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-              <a href="#experience" className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Experience</a>
+              <a href="#experience" className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
               <a href="#projects" className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
               <a href="#contact" className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
             </div>
