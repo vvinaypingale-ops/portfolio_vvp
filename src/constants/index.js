@@ -6,7 +6,7 @@ export const USER_DETAILS = {
   github: "https://github.com/vvinaypingale-ops",
   githubUsername: "vvinaypingale-ops",
   roles: ["AI Engineer", "Machine Learning Enthusiast", "Full Stack Developer", "Python Developer"],
-  resumeLink: "https://drive.google.com/file/d/11x2sXolW765wxcT-s02fORYupFszPMAS/view?usp=drive_link"
+  resumeLink: "https://drive.google.com/file/d/1Kr7ywZ5PreKrgQTzvJ6FNyjN0VX4zgjV/view?usp=sharing"
 };
 
 export const PROJECTS = [
