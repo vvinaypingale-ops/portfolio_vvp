@@ -30,15 +30,15 @@ const Projects = () => {
               return (
                 <motion.div 
                   key={project.id}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
-                  className={`rounded-xl overflow-hidden ai-glass-card group flex flex-col h-full relative ${isTopProject ? 'border-primary/30 shadow-[0_0_15px_rgba(6,182,212,0.1)]' : ''}`}
+                  transition={{ duration: 0.6, delay: index * 0.15, type: "spring", stiffness: 100 }}
+                  whileHover={{ y: -15, scale: 1.02 }}
+                  className={`rounded-2xl overflow-hidden ai-glass-card group flex flex-col h-full relative transition-all duration-500 ${isTopProject ? 'border-primary/40 shadow-[0_0_30px_rgba(6,182,212,0.15)]' : 'border-white/10 dark:border-gray-800'}`}
                 >
                   {/* Glowing background effect on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <div className="p-8 flex-grow flex flex-col relative z-10">
                     <div className="flex justify-between items-start mb-4">
@@ -61,9 +61,9 @@ const Projects = () => {
                       ))}
                     </ul>
                     
-                    <div className="flex flex-wrap gap-2 mb-8 mt-auto pt-4 border-t border-gray-200 dark:border-gray-700/50">
+                    <div className="flex flex-wrap gap-2 mb-8 mt-auto pt-6 border-t border-gray-200/50 dark:border-gray-700/50">
                       {project.techStack.map(tech => (
-                        <span key={tech} className="px-3 py-1 bg-gray-100 dark:bg-[#030712] border border-gray-200 dark:border-gray-800 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
+                        <span key={tech} className="px-3 py-1 bg-white/50 dark:bg-[#030712]/80 border border-gray-200 dark:border-gray-800 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300 group-hover:border-primary/30 transition-colors">
                           {tech}
                         </span>
                       ))}
@@ -71,12 +71,12 @@ const Projects = () => {
                     
                     <div className="flex gap-4">
                       {project.githubUrl && (
-                        <a href={project.githubUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-primary hover:text-white transition-colors font-medium text-sm">
+                        <a href={project.githubUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/50 dark:bg-gray-800/80 backdrop-blur-sm text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors font-medium text-sm border border-gray-200 dark:border-gray-700">
                           <FiGithub /> Source
                         </a>
                       )}
                       {project.liveUrl && (
-                        <a href={project.liveUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors font-medium text-sm ml-auto">
+                        <a href={project.liveUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors font-medium text-sm ml-auto border border-primary/20 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)]">
                           <FiExternalLink /> Live Demo
                         </a>
                       )}
