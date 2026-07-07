@@ -68,7 +68,7 @@ export const PROJECTS = [
     ],
     techStack: ["Java Servlets", "JSP", "MySQL", "Bootstrap", "Tomcat"],
     githubUrl: "https://github.com/vvinaypingale-ops",
-    liveUrl: ""
+    liveUrl: "https://alumni-system-demo.loca.lt/AlumniManagementSystem/login"
   },
   {
     id: 5,
