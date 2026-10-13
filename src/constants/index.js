@@ -12,8 +12,8 @@ export const USER_DETAILS = {
 export const PROJECTS = [
   {
     id: 1,
-    name: "PulseGuard-AI",
-    description: "AI-powered healthcare platform for cardiovascular risk detection and emergency management.",
+    name: "PulseGuard AI",
+    description: "AI-powered clinical healthcare platform for cardiovascular risk detection, emergency management, and real-time response.",
     bullets: [
       "Developed a cardiovascular disease prediction engine with a clinical-grade dashboard.",
       "Implemented a backend system utilizing Spring Boot and MySQL for secure data storage.",
@@ -22,26 +22,56 @@ export const PROJECTS = [
       "Designed a modular, scalable architecture ensuring low-latency mission-critical operations."
     ],
     techStack: ["React", "Spring Boot", "MySQL", "AI/ML", "Google Maps API"],
-    githubUrl: "https://github.com/vvinaypingale-ops", // Placeholder as exact wasn't specified
-    liveUrl: "" // Optional
+    githubUrl: "https://github.com/vvinaypingale-ops",
+    liveUrl: "https://pulse-guard-tech-youth.onrender.com/"
   },
   {
     id: 2,
-    name: "AI Study Companion",
-    description: "An intelligent study tool providing personalized learning experiences.",
+    name: "Vinax AutoCorrect AI",
+    description: "Intelligent writing assistant and real-time grammar corrector with multi-tone rephrasing, email drafting, and document auditing.",
     bullets: [
-      "Created an AI-driven study planner that adapts to user progress and learning pace.",
-      "Integrated Large Language Models (LLMs) to generate summaries and quiz questions.",
-      "Developed an intuitive, responsive frontend for seamless student interaction.",
-      "Implemented robust user authentication and progress tracking systems.",
-      "Optimized backend APIs for fast response times and scalable content delivery."
+      "Engineered real-time grammar and spell-checking with instant suggestions and one-click corrections.",
+      "Integrated Google Gemini LLM API for tone shifting (Professional, Casual, Academic, Marketing) and rewriting.",
+      "Built an AI email assistant drafting tailored business proposals, cover letters, and follow-up templates.",
+      "Implemented full-document proofreading audit for PDF/DOCX/TXT with readability and clarity scoring.",
+      "Incorporated Web Speech API voice-to-text dictation, custom dictionary, and writing analytics."
     ],
-    techStack: ["React", "Node.js", "Python", "LLMs", "MongoDB"],
+    techStack: ["JavaScript", "Gemini LLM API", "NLP", "Speech Recognition", "CSS3"],
     githubUrl: "https://github.com/vvinaypingale-ops",
-    liveUrl: ""
+    liveUrl: "https://autocorrect-app-nine.vercel.app/"
   },
   {
     id: 3,
+    name: "AI Study Companion",
+    description: "Intelligent study tool providing personalized learning experiences, RAG vector search, and adaptive quizzes.",
+    bullets: [
+      "Created an AI-driven study planner with 7-day personalized schedules adapting to student progress.",
+      "Integrated Large Language Models (LLMs) with RAG vector store for document embedding and citation.",
+      "Built an interactive AI tutor chat, practice quiz generator, and automated mistake revision log.",
+      "Developed an intuitive, responsive frontend for tracking subject-wise mastery across semester syllabi.",
+      "Optimized backend APIs for fast response times and scalable content delivery."
+    ],
+    techStack: ["React", "Python", "LLMs & RAG", "Node.js", "MongoDB"],
+    githubUrl: "https://github.com/vvinaypingale-ops",
+    liveUrl: "https://ai-study-companion-dd76.onrender.com/"
+  },
+  {
+    id: 4,
+    name: "Alumni Management System",
+    description: "Enterprise full-stack web application for managing alumni networks, event registrations, and communication.",
+    bullets: [
+      "Architected a robust MVC pattern using Java Servlets and JSP.",
+      "Designed a 3NF normalized MySQL database with transactional support.",
+      "Integrated asynchronous multithreading using ExecutorService for background tasks.",
+      "Developed a clean frontend using Bootstrap for responsive user interfaces.",
+      "Configured and deployed the application on Apache Tomcat servers."
+    ],
+    techStack: ["Java Servlets", "JSP", "MySQL", "Bootstrap", "Tomcat"],
+    githubUrl: "https://github.com/vvinaypingale-ops",
+    liveUrl: "https://alumni-system-demo.loca.lt/AlumniManagementSystem/login"
+  },
+  {
+    id: 5,
     name: "Personal Expense Tracker",
     description: "A comprehensive financial application for tracking daily expenses and analyzing spending habits.",
     bullets: [
@@ -56,22 +86,7 @@ export const PROJECTS = [
     liveUrl: ""
   },
   {
-    id: 4,
-    name: "Alumni Management System",
-    description: "A full-stack web application for managing alumni networks and event registrations.",
-    bullets: [
-      "Architected a robust MVC pattern using Java Servlets and JSP.",
-      "Designed a 3NF normalized MySQL database with transactional support.",
-      "Integrated asynchronous multithreading using ExecutorService for background tasks.",
-      "Developed a clean frontend using Bootstrap for responsive user interfaces.",
-      "Configured and deployed the application on Apache Tomcat servers."
-    ],
-    techStack: ["Java Servlets", "JSP", "MySQL", "Bootstrap", "Tomcat"],
-    githubUrl: "https://github.com/vvinaypingale-ops",
-    liveUrl: "https://alumni-system-demo.loca.lt/AlumniManagementSystem/login"
-  },
-  {
-    id: 5,
+    id: 6,
     name: "Web Music Player",
     description: "A dynamic web-based audio player with playlist management and sleek UI.",
     bullets: [

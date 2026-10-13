@@ -1,43 +1,43 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiCheckCircle, FiCpu, FiLayers, FiActivity, FiChevronDown, FiChevronUp, FiBookOpen, FiDollarSign, FiUsers, FiMusic } from 'react-icons/fi';
+import { FiGithub, FiExternalLink, FiCheckCircle, FiCpu, FiLayers, FiActivity, FiChevronDown, FiChevronUp, FiBookOpen, FiDollarSign, FiUsers, FiMusic, FiEdit3 } from 'react-icons/fi';
 import { PROJECTS } from '../constants';
 
 const PROJECT_EXTRAS = {
   1: {
     category: "AI & Healthcare",
-    badge: "Flagship AI Platform",
+    badge: "Predict. Prevent. Protect.",
     gradient: "from-sky-500/20 via-indigo-500/10 to-teal-500/15",
     accentColor: "#38bdf8",
     icon: FiActivity,
     metrics: [
-      { label: "Predictive Engine", val: "Cardiovascular AI" },
+      { label: "Predictive AI", val: "Cardiovascular Engine" },
       { label: "Emergency", val: "Real-time SOS + GPS" },
       { label: "Backend", val: "Spring Boot + MySQL" }
     ]
   },
   2: {
+    category: "AI & Productivity",
+    badge: "Gemini AI Engine",
+    gradient: "from-amber-500/20 via-orange-500/10 to-rose-500/15",
+    accentColor: "#f59e0b",
+    icon: FiEdit3,
+    metrics: [
+      { label: "Core Model", val: "Google Gemini LLM" },
+      { label: "Features", val: "Grammar, Tone & Voice" },
+      { label: "Deployment", val: "Vercel Cloud" }
+    ]
+  },
+  3: {
     category: "AI & Education",
-    badge: "LLM Powered",
+    badge: "RAG & LLM Powered",
     gradient: "from-purple-500/20 via-pink-500/10 to-indigo-500/15",
     accentColor: "#a855f7",
     icon: FiBookOpen,
     metrics: [
-      { label: "Core Model", val: "Large Language Models" },
-      { label: "Learning Pace", val: "Adaptive AI" },
+      { label: "Knowledge Base", val: "RAG Vector Store" },
+      { label: "Study Planner", val: "Adaptive 7-Day Plan" },
       { label: "Stack", val: "React + Python + Node" }
-    ]
-  },
-  3: {
-    category: "Full Stack",
-    badge: "Intelligent Finance",
-    gradient: "from-emerald-500/20 via-teal-500/10 to-cyan-500/15",
-    accentColor: "#10b981",
-    icon: FiDollarSign,
-    metrics: [
-      { label: "ML Classification", val: "Expense Categorizer" },
-      { label: "Data Visualization", val: "Interactive Charts" },
-      { label: "Stack", val: "React + Node + SQL" }
     ]
   },
   4: {
@@ -53,6 +53,18 @@ const PROJECT_EXTRAS = {
     ]
   },
   5: {
+    category: "Full Stack",
+    badge: "Intelligent Finance",
+    gradient: "from-emerald-500/20 via-teal-500/10 to-cyan-500/15",
+    accentColor: "#10b981",
+    icon: FiDollarSign,
+    metrics: [
+      { label: "ML Classification", val: "Expense Categorizer" },
+      { label: "Data Visualization", val: "Interactive Charts" },
+      { label: "Stack", val: "React + Node + SQL" }
+    ]
+  },
+  6: {
     category: "Web Apps",
     badge: "Interactive Media",
     gradient: "from-rose-500/20 via-purple-500/10 to-amber-500/15",
@@ -70,12 +82,14 @@ const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [expandedId, setExpandedId] = useState(1); // Default first project expanded for rich preview
 
-  const filters = ['All', 'AI & Healthcare', 'Full Stack', 'Web Apps'];
+  const filters = ['All', 'AI & ML', 'Full Stack', 'Web Apps'];
 
   const filteredProjects = PROJECTS.filter((proj) => {
     if (activeFilter === 'All') return true;
     const extra = PROJECT_EXTRAS[proj.id];
-    return extra && extra.category === activeFilter;
+    if (!extra) return false;
+    if (activeFilter === 'AI & ML') return extra.category.includes('AI');
+    return extra.category === activeFilter;
   });
 
   const toggleExpand = (id) => {
@@ -269,10 +283,11 @@ const Projects = () => {
                             href={project.liveUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold glass-btn-primary"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold glass-btn-primary group shadow-sm hover:shadow-sky-500/20 transition-all"
                           >
-                            <FiExternalLink />
+                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                             <span>Live Demo</span>
+                            <FiExternalLink className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                           </a>
                         )}
                       </div>
